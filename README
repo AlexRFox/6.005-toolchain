@@ -1,0 +1,14 @@
+I developed this toolchain while in 6.005 and slowly added features as
+the class went on. The expected development environment 6.005 is aimed
+at is Java in Eclipse working in an SVN repository. I prefer the
+command line to Eclipse, make to ant, and git to svn. So I designed a
+set of tools to allow me to pull starting files from SVN, work on them
+in my oen environment and push them back.
+
+I have not thought all edge cases of these scripts through carefully,
+and I rely on knowing them inside and out to keep myself out of
+trouble. I'm trying to clean the scripts up to be less specialized to
+my computer and less dangerous. If I remember, I'll keep pushing my
+changes to this repository as the semester goes on. There's a chance
+I'll turn this into a .deb once it's polished enough, I hope to hand
+it off to the 6.005 staff for future years.
