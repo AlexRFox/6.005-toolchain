@@ -2,4 +2,4 @@
 
 export CLASSPATH=./bin
 
-java minesweeper.server.MinesweeperServer
+java minesweeper.server.MinesweeperServer $*
