@@ -1,0 +1,59 @@
+This is a fresh copy of ps4 pulled directly from svn with these
+scripts. No changes made to the files yet. They're included as an
+example and because I don't want to bother renaming everything to be a
+more anonymized example.
+
+The main trick to this setup is svn must be a symbolic link to the ps4
+directory in your svn repo. Everything else (should) work without any
+tweaks.
+
+================================================================
+
+There are two major design changes from the previous version (in the
+parent directory).
+
+====
+
+Pulling is closer to automated:
+
+$ make genpull
+
+will now find all the files in the svn repo, attempt to remove the
+uninteresting ones (svn files, not actual code).
+
+====
+
+Pulling handles directory mirroring:
+
+$ make pull
+
+will now read out the directory tree in the svn repo and mirror it in
+the current directory.
+
+====
+
+Pushing handles directory mirroring:
+
+$ make push
+
+will now push the directory tree in the current directory to the svn
+repo.
+
+====
+
+NOTE: the directory trees mirrored in make pull and make push are NOT
+handled in SVN-FILES yet. The entire tree, regardless of content or if
+you want it to be copied, will be mirrored. The scripts should
+correctly avoid .svn directories, but as is they don't think about
+anything else. If you do your pset work in the top level of your git
+repository, you may want to make it ignore your .git directory as
+well. Poke around in push.sh to figure out how, it should be
+clear. You can use pull.sh as an example for how to exclude
+directories.
+
+====
+
+I've barely tested any of this, at the time of this writing I've only
+used these scripts to pull the svn ps4 starting files and push a tmp
+directory to see if that part worked. Please poke me (on github, or
+any other way you can figure out) if you find any bugs.

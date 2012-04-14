@@ -1,0 +1,7 @@
+#! /bin/sh
+
+find . -name *.java -print0 | xargs -0 grep -Ri todo
+if [ $? -eq 0 ]
+then
+    echo "THERE'S A TODO SOMEWHERE IN THE CODE!"
+fi
