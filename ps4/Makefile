@@ -37,3 +37,10 @@ genpush:
 
 genpull:
 	gen-svn-pull.sh
+
+svnstatus:
+	(cd svn; svn status)
+
+svncommit:
+	make svnstatus
+	(cd svn; svn commit)
