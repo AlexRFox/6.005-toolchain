@@ -1,6 +1,14 @@
 package square;
 
+/**
+ * Example for demonstrating Makefile.
+ */
 public class Square {
+    /**
+     * Squares a number.
+     * @param x the number to square.
+     * @return The square of the number.
+     */
     public static int square(int x) {
 	return x*x;
     }
