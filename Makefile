@@ -14,10 +14,8 @@ MAIN_CLASS := $(subst /,.,$(patsubst src/%.java,%, $(MAIN_FILE)))
 default: tests
 
 bin/%.class: src/%.java
+	@mkdir -p bin
 	javac $(JC_FLAGS) $<
-
-doc/%.html: src/%.java
-	javadoc $(JD_FLAGS) $<
 
 .PHONY:
 classes: $(CLASSES)
@@ -39,8 +37,9 @@ main: $(CLASSES)
 
 .PHONY:
 docs:
+	@mkdir -p doc
 	@echo "Generating documentation..."
-	@javadoc -d doc $(SOURCES)
+	@javadoc $(JD_FLAGS) $(SOURCES)
 	@echo "Done generating documentation."
 
 TAGS: $(SOURCES)
