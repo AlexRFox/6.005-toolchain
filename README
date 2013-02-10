@@ -11,6 +11,8 @@ To run the main function, run the command:
 
 To generate documentation, run the command:
    make docs
+You can visit the generated documentation by pointing your browser to docs/index.html:
+   google-chrome doc/index.html 
 
 To generate a TAGS file for use with emacs/vim autocompletion:
    make TAGS
