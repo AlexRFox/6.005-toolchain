@@ -1,14 +1,21 @@
-I developed this toolchain while in 6.005 and slowly added features as
-the class went on. The expected development environment 6.005 is aimed
-at is Java in Eclipse working in an SVN repository. I prefer the
-command line to Eclipse, make to ant, and git to svn. So I designed a
-set of tools to allow me to pull starting files from SVN, work on them
-in my oen environment and push them back.
+This is a Makefile for 6.005 problem sets and projects. This Makefile allows you to work on 6.005 assignments using the command line and your favorite text editor without having to use Eclipse.
 
-I have not thought all edge cases of these scripts through carefully,
-and I rely on knowing them inside and out to keep myself out of
-trouble. I'm trying to clean the scripts up to be less specialized to
-my computer and less dangerous. If I remember, I'll keep pushing my
-changes to this repository as the semester goes on. There's a chance
-I'll turn this into a .deb once it's polished enough, I hope to hand
-it off to the 6.005 staff for future years.
+Copy the Makefile file to the top-level directory of your assignment to use it, or, run make from the to-level directory of this repository to try the example out.
+
+To compile your code and run the unit tests, run the command:
+   make
+from the top-level directory of your assignment.
+
+To run the main function, run the command:
+   make main
+
+To generate documentation, run the command:
+   make docs
+
+To generate a TAGS file for use with emacs/vim autocompletion:
+   make TAGS
+
+To cleanup generated files:
+   make clean
+
+This code was originally based on Alex Willison's 6.005 toolchain from Spring 2012.
