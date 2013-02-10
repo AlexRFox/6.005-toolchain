@@ -4,8 +4,12 @@ JD_FLAGS= -d doc
 
 SOURCES := $(shell find src -name "*.java")
 CLASSES := $(patsubst %.java, %.class, $(patsubst src/%, bin/%, $(SOURCES)))
+
 TEST_FILES :=  $(filter %Test.class, $(CLASSES))
 TESTS := $(subst /,., $(patsubst bin/%.class, %, $(TEST_FILES)))
+
+MAIN_FILE := $(shell grep -l "public static void main" $(SOURCES))
+MAIN_CLASS := $(subst /,.,$(patsubst src/%.java,%, $(MAIN_FILE)))
 
 default: tests
 
@@ -27,6 +31,11 @@ tests: $(CLASSES)
 		echo "Testing $$test...";\
 		java -cp $(CLASSPATH) org.junit.runner.JUnitCore $$test;\
 	done
+
+.PHONY:
+main: $(CLASSES)
+	@echo "Running $(MAIN_CLASS) ..."
+	@java -cp $(CLASSPATH) $(MAIN_CLASS)
 
 .PHONY:
 docs:
