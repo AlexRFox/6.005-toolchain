@@ -1,14 +1,0 @@
-
-model/JottoModel.java,82
-public class JottoModel 6,77
-	public void makeGuess(JottoModel.makeGuess11,176
-
-ui/JottoGUI.java,418
-public class JottoGUI 13,254
-	private JButton newPuzzleButton;JottoGUI.newPuzzleButton15,294
-	private JTextField newPuzzleNumber;JottoGUI.newPuzzleNumber16,328
-	private JLabel puzzleNumber;JottoGUI.puzzleNumber17,365
-	private JTextField guess;JottoGUI.guess18,395
-	private JTable guessTable;JottoGUI.guessTable19,422
-	public JottoGUI(JottoGUI.JottoGUI21,451
-	public static void main(JottoGUI.main36,864
